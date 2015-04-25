@@ -14,6 +14,9 @@ gem 'bootstrap-sass'
 gem 'bcrypt',               '3.1.7'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
