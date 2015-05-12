@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   get 'password_resets/edit'
 
-  root 'static_pages#home'
+#  root 'static_pages#home'
+  root 'users#home'
   get 'help' => 'static_pages#help'
   get 'about' => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
@@ -12,6 +13,8 @@ Rails.application.routes.draw do
   get 'login'   => 'sessions#new'
   post 'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+  #get 'show2' => 'users#show2'
+  #get '/home/:id', to: 'users#home', as: 'user'
 
   resources :users do
     member do
