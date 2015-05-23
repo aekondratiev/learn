@@ -5,6 +5,18 @@
 
 $gray-medium-light: #eaeaea;
 
+/*
+pre {
+ text-align: justify;
+ line-height: 1px;
+ white-space: pre-wrap;       
+ white-space: -moz-pre-wrap; 
+ white-space: -pre-wrap;    
+ white-space: -o-pre-wrap;   
+ word-wrap: break-word;   
+}
+*/
+
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
@@ -211,6 +223,7 @@ input {
 
 /* microposts */
 
+
 .microposts {
   list-style: none;
   padding: 0;
@@ -225,6 +238,8 @@ input {
   .content {
     display: block;
     margin-left: 60px;
+    text-align: justify;
+    font: 9pt sans-serif;
     img {
       display: block;
       padding: 5px 0;
@@ -241,6 +256,8 @@ input {
     margin-top: 5px;
   }
 }
+
+
 
 aside {
   textarea {
