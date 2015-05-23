@@ -19,7 +19,8 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       @microposts = @user.microposts.paginate(page: params[:page])
       @micropost  = current_user.microposts.build
-      @feed_items = current_user.feed.paginate(page: params[:page])
+      #@feed_items = current_user.feed.paginate(page: params[:page])
+      @user_public_posts = @user.user_public_posts.paginate(page: params[:page])
     end
   end
 

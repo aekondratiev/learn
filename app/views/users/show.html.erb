@@ -3,15 +3,21 @@
 <div class="row">
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>
-    <% if @user.microposts.any? %>
-      <h3>Microposts (<%= @user.microposts.count %>)</h3>
-      <ol class="microposts">
-        <%= render @microposts %>
-      </ol>
-      <%= will_paginate @microposts %>
+    <% if current_user?(@user) %>
+        <% if @user.microposts.any? %>
+          <h3>Microposts (<%= @user.microposts.count %>)</h3>
+          <ol class="microposts">
+            <%= render @microposts %>
+          </ol>
+          <%= will_paginate @microposts %>
+        <% end %>
+    <% else %>
+        <ol class="microposts">
+          <%= render @user_public_posts %>
+        </ol>
+        <%= will_paginate @user_public_posts %>
     <% end %>
   </div>
-
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
@@ -27,6 +33,8 @@
       </section>
   </aside>
 </div>
+<% if current_user?(@user) %>
+<% end %>
 <% else %>
   <div class="center jumbotron">
     <h1>Welcome to the Sample App</h1>
@@ -43,4 +51,3 @@
   <%= link_to image_tag("rails.png", alt: "Rails logo"),
               'http://rubyonrails.org/' %>
 <% end %>
-
